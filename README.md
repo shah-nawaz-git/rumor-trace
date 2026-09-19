@@ -2,9 +2,9 @@
 
 Trace the earliest observable occurrence of a public Bluesky post’s claim within retrieved accessible evidence, and visualize propagation relationships and wording mutations.
 
-**[Open the live demo](https://40042ff49095ff.lhr.life/)**
+**[Open the live demo](https://rumor-trace.vercel.app)**
 
-> This is a temporary preview link and may expire, rotate, or become unavailable. If it is unavailable, use the local setup below. The featured investigation does not depend on live Bluesky API access.
+> The featured investigation is bundled and does not depend on Bluesky API access. Live investigations report available evidence and any coverage limits.
 
 ## Quick Demo
 
