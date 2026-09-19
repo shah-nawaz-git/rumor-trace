@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #f4f1e8;
+  --color-cream-deep: #ebe6d6;
+  --color-forest: #13231b;
+  --color-forest-soft: #2a4436;
+  --color-ember: #f06432;
+  --color-ember-deep: #96360f;
+  --color-error: #96360f;
+  --color-moss: #2f7668;
+  --color-moss-deep: #215349;
+  --color-line: #d8d1bc;
+  --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+}
+
+html {
+  background: var(--color-cream);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-forest);
+  overflow-x: hidden;
+}
+
+.font-serif-display {
+  font-family: var(--font-serif);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ember);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.trace-dots span {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.45rem;
+  border-radius: 9999px;
+  background: var(--color-ember);
+  animation: trace-pulse 1.2s ease-in-out infinite;
+}
+
+.trace-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.trace-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes trace-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.diff-view ins {
+  background: #dcefe6;
+  color: var(--color-moss-deep);
+  text-decoration: none;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.diff-view del {
+  background: #f6ddd2;
+  color: var(--color-ember-deep);
+  text-decoration: line-through;
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.graph-frame {
+  background: var(--color-forest);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid #23423320;
+}
+
+.graph-node {
+  width: 270px;
+  min-height: 135px;
+  background: var(--color-cream);
+  color: var(--color-forest);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+  box-shadow: 0 6px 18px #0a130e66;
+}
+
+.graph-node-selected {
+  border-color: var(--color-ember);
+  box-shadow: 0 0 0 2px var(--color-ember), 0 6px 18px #0a130e66;
+}
+
+.graph-node-group {
+  width: 230px;
+  background: var(--color-moss);
+  color: #f4f1e8;
+  border: 1px dashed #f4f1e899;
+  border-radius: 18px;
+  padding: 0.9rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.react-flow__edge-text {
+  font-size: 0.65rem;
+}
+
+details.coverage-details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.coverage-details summary::-webkit-details-marker {
+  display: none;
+}
+
+details.coverage-details summary::after {
+  content: "▸";
+  display: inline-block;
+  margin-left: 0.4rem;
+  transition: transform 0.15s ease;
+}
+
+details.coverage-details[open] summary::after {
+  transform: rotate(90deg);
+}
